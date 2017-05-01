@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <RatingBar
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:id="@+id/detail_ratings"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/detail_fragment_movie_margin_top" />
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:layout_marginRight="@dimen/detail_fragment_movie_margin_right">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="left"
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:id="@+id/imageview_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left" />
+
+            <TextView
+                android:fontFamily="sans-serif-light"
+                android:id="@+id/detail_year"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/detail_fragment_movie_margin_top" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_favorite"
+            android:layout_width="@dimen/favourite_width"
+            android:layout_height="@dimen/favourite_height"
+            android:text="@string/tv_button_favorite"
+            android:background="@color/favorite_not_selected"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tv_author"
+            android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="right" />
+
+
+    </GridLayout>
+
+
+
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:id="@+id/detail_overview"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/tv_author"
+        android:textStyle="bold"
+        android:textColor="@color/detail_background"
+        android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+        android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+        android:layout_marginRight="@dimen/detail_fragment_movie_margin_right" />
+
+    <View
+        android:id="@+id/detail_seperator"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+        android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+        android:layout_marginRight="@dimen/detail_fragment_movie_margin_right" />
+
+    <TextView
+        android:fontFamily="sans-serif-light"
+        android:id="@+id/detail_label_trailers"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/tv_reviews"
+        android:text="@string/tv_trailers"
+        android:textStyle="bold"
+        android:textColor="@color/detail_background"
+        android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+        android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+        android:layout_marginRight="@dimen/detail_fragment_movie_margin_right" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ListView
+            android:id="@+id/listview_trailers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+            android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+            android:layout_marginRight="@dimen/detail_fragment_movie_margin_right"
+            android:fastScrollEnabled="false"/>
+
+        <TextView
+            android:id="@+id/listview_trailers_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+            android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+            android:layout_marginRight="@dimen/detail_fragment_movie_margin_right"
+            android:textStyle="italic" />
+
+        <TextView
+            android:fontFamily="sans-serif-light"
+            android:id="@+id/detail_label_reviews"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/tv_reviews"
+            android:text="@string/tv_reviews"
+            android:textStyle="bold"
+            android:textColor="@color/detail_background"
+            android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+            android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+            android:layout_marginRight="@dimen/detail_fragment_movie_margin_right"/>
+
+        <ListView
+            android:id="@+id/listview_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+            android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+            android:layout_marginRight="@dimen/detail_fragment_movie_margin_right"
+            android:fastScrollEnabled="false"/>
+
+        <TextView
+            android:id="@+id/listview_reviews_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/detail_fragment_movie_margin_top"
+            android:layout_marginLeft="@dimen/detail_fragment_movie_margin_left"
+            android:layout_marginRight="@dimen/detail_fragment_movie_margin_right"
+            android:textStyle="italic" />
+    </LinearLayout>
+</LinearLayout>
